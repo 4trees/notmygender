@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="no-js">
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta charset="utf-8">
+    <!-- GA -->
+    <!-- <script src="https://vis.csh.ac.at/analytics/ga4.js"></script> -->
+    <!-- Page title: change the content accordingly -->
+    <title>This is Not My Gender</title>
+    <!-- Meta and image preview: change the content accordingly-->
+    <!-- <meta name="description" content="Explore the complexities of Chinese names and their Hanyu Pinyin transliteration, which can create ambiguity, even for native speakers."/> -->
+    <meta name="keywords" content="CSH, " />
+    <!-- <link rel="image_src" href="https://vis.csh.ac.at/notmyname/static/share-image.png" /> -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Not My Gender" />
+    <meta property="og:title" content="Not My Gender" />
+    <!-- <meta property="og:url" content="https://vis.csh.ac.at/notmyname/" /> -->
+    <!-- <meta property="og:description" content="Explore the complexities of Chinese names and their Hanyu Pinyin transliteration, which can create ambiguity, even for native speakers." /> -->
+    <!-- <meta property="og:image" content="https://vis.csh.ac.at/notmyname/static/share-image.png" /> -->
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@csh" />
+    <meta name="twitter:title" content="Not My Gender" />
+    <!-- <meta name="twitter:description" content="Explore the complexities of Chinese names and their Hanyu Pinyin transliteration, which can create ambiguity, even for native speakers." /> -->
+    <!-- <meta name="twitter:url" content="https://vis.csh.ac.at/notmyname/" /> -->
+    <!-- <meta name="twitter:image" content="https://vis.csh.ac.at/notmyname/static/share-image.png" /> -->
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/yde2hyv.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/bootstrap-5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/icomoon/css/icomoon.css" />
+    <link rel="stylesheet" href="./styles/charts.css?v2" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/scrolly.css" />
+    <script src="https://vis.csh.ac.at/favicon/favicon.js"></script>
+</head>
+
+<body>
+    <nav class="g-0 d-flex flex-sm-column align-items-center justify-content-between fw-bold py-2">
+        <div class="d-flex align-items-center">
+            <a class="nav-link p-0 py-2" href="./">NotMyGender</a>
+        </div>
+        <div class="d-flex align-items-center flex-sm-column">
+            <a class="nav-link p-2" href="./explorer.html">Explorer</a>
+            <a class="nav-link p-0 py-2" href="./about.html">About</a>
+        </div>
+    </nav>
+    <div class="container-fluid position-relative g-0 col-12 d-flex align-items-center flex-column">
+        <!--  <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div> -->
+        <div class="cover d-flex flex-column align-items-start justify-content-end position-relative">
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container text-bg p-4" style="z-index: 1;margin-left: 3em;">
+                <h1 class="d-flex align-items-center flex-column mb-3">
+                    <span class="fs-5 fw-bolder p-0 m-0 col-12">This is</span>
+                    <span class="fs-1 fw-bolder mt-0 p-0 col-12 text-nowrap">Not My Gender</span>
+                </h1>
+                <p class="fs-7 ">You may come across Chinese names in various contexts, such as <span class="fw-bold">Cixin Liu</span>, the author of the science fiction novel <span class="fst-italic">The Three-Body Problem</span>, and <span class="fw-bold">Ai Weiwei</span>, a contemporary Chinese artist.</p>
+                <p class="fs-7 mb-1">However, these names have been transliterated to Hanyu Pinyin, which represents Mandarin pronunciation, rather than their original characters. This can lead to name ambiguity, as even native Chinese speakers may find it challenging to decode the original names behind the Pinyin.</p>
+                <p class="text-muted fs-7 fst-italic">Scroll down for the story or click <span class="fw-bold">Explorer</span> to dive in.</p>
+            </div>
+            <div id="graph-cover" class="graph col-12 position-absolute top-0"></div>
+        </div>
+    </div>
+    <div class="container-fluid position-relative g-0 col-12 d-flex align-items-center flex-column">
+        <div class="col-12 d-flex flex-column align-items-center">
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container">
+                <h2 class="fs-3 mt-3 mt-sm-5 mb-3 fw-bold">The structure of<br>Pinyin names</h2>
+                <p>The Chinese language is character-based, including personal names. While surnames are inherited, parents can choose one or two (rarely three) characters for their children’s given names based on factors like meaning, sound, and family tradition.</p>
+                <div class="d-flex flex-column flex-md-row mb-3 justify-content-center">
+                    <div class="d-flex flex-column align-items-center mx-5">
+                        <p class="fw-bold">surname</p>
+                        <div class="d-flex flex-md-column">
+                            <div class="d-flex flex-column align-items-center position-relative">
+                                <img src="./static/imgs/leaf.svg" class="chara-bg-sm">
+                                <p>single</p>
+                                <p class="position-absolute d-flex fw-bold m-0 top-0">
+                                    <span class="chara-bg-sm d-flex align-items-center justify-content-center">Liu</span>
+                                </p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <div class="d-flex align-items-center"><img src="./static/imgs/leaf.svg" class="chara-bg-sm" style="margin-right:-2.5em"><img src="./static/imgs/leaf.svg" class="chara-bg-sm"></div>
+                                <p>compound(rare)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-column align-items-center mx-5">
+                        <p class="fw-bold">given name</p>
+                        <div class="d-flex flex-column">
+                            <div class="d-flex flex-column align-items-center">
+                                <img src="./static/imgs/leaf.svg" class="chara-bg-sm">
+                                <p>one character</p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center position-relative">
+                                <div class="d-flex align-items-center"><img src="./static/imgs/leaf.svg" class="chara-bg-sm" style="margin-right:-0.5em"><img src="./static/imgs/leaf.svg" class="chara-bg-sm"></div>
+                                <p>two characters</p>
+                                <p class="position-absolute d-flex fw-bold m-0 top-0">
+                                    <span class="chara-bg-sm d-flex align-items-center justify-content-center" style="margin-right:-0.5em">Ci</span>
+                                    <span class="chara-bg-sm d-flex align-items-center justify-content-center">Xin</span>
+                                </p>
+                            </div>
+                            <div class="d-flex flex-column align-items-center">
+                                <div class="d-flex align-items-center"><img src="./static/imgs/leaf.svg" class="chara-bg-sm"><img src="./static/imgs/leaf.svg" class="chara-bg-sm" style="margin-left:-0.5em;margin-right:-0.5em"><img src="./static/imgs/leaf.svg" class="chara-bg-sm"></div>
+                                <p>three characters (rare)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>For example, in <span class="fw-bold">Cixin Liu</span>, "<span class="fw-bold">Liu</span>" (刘) is the surname, and "<span class="fw-bold">Cixin</span>" is the chosen given name, made up of the characters "<span class="fw-bold">Ci</span>" (慈) and "<span class="fw-bold">Xin</span>" (欣). When written in Pinyin, these characters are represented as syllables that together form the name "Cixin."</p>
+            </div>
+        </div>
+        <div class="col-12 d-flex flex-column align-items-center">
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container">
+                <h2 class="fs-3 mt-3 mt-sm-5 mb-3 fw-bold">Pinyin ambiguity</h2>
+                <p>Each Chinese character has a pronunciation represented by Pinyin, made up of syllables, each with an associated tone. Four standard tones (e.g., <span class="sound px-1 dot-icon" data-tone="1">ā<i class="ms-2 icon-volume"></i></span> <span class="sound px-1 dot-icon" data-tone="2">á<i class="ms-2 icon-volume"></i></span> <span class="sound px-1 dot-icon" data-tone="3">ǎ<i class="ms-2 icon-volume"></i></span> <span class="sound px-1 dot-icon" data-tone="4">à<i class="ms-2 icon-volume"></i></span> for "a") are shown in color below, with tones displayed in multiple colors for characters with multiple pronunciations. Of the 8,000+ General Standard Chinese Characters, about 16.1% have multiple pronunciations, with some pronounced differently in names.</p>
+            </div>
+            <div class="d-flex flex-column mt-2 mb-4">
+                <div class="d-flex flex-column flex-md-row align-items-sm-end">
+                    <div class="d-flex flex-column align-items-center">
+                        <button type="button" id="btn-randomchara" class="blinking btn btn-sm btn-light mb-2 lh-1 py-1 px-3 d-flex align-items-center justify-content-center"><i class="icon-random"></i></button>
+                        <div class=" position-relative">
+                            <div class="chara-bg-lg" id="randomchara-bg"></div>
+                            <p class="position-absolute chara-bg-lg d-flex m-0 top-0 align-items-center justify-content-center text-white">
+                                <span id="randomchara">...</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="d-flex mx-3 mt-3 mt-sm-0 mb-3" id="randomchara-pinyin"></div>
+                </div>
+            </div>
+            <p class="fs-7 text-muted text-center">Use <i class="icon-random"></i> to switch example</p>
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container">
+                <p>Chinese characters vary in usage frequency, and a character common in daily life may not be as frequent in names. In this project, we focus on <span class="count-namechara fw-bold">2,936</span> characters that are used as surnames or appear in given names of at least one person per million people.</p>
+                <p><span class="fs-5 fw-bold">However…</span><br>Various characters can share the same Pinyin. For example, "<span class="fw-bold">yì</span>" refers to <span id="count-yi" class="fw-bold">39</span> distinct characters.</p>
+            </div>
+            <div class="col-12 graph-case graph-case1 mb-3"></div>
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container">
+                <p>As Chinese is a tonal language, a syllable pronounced in different tones can correspond to various sets of characters.</p>
+            </div>
+            <div class="col-12 graph-case graph-case2 mb-3"></div>
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container">
+                <p>When only the syllables (without tone markers) are used, identifying the original characters becomes even more challenging—especially in situations like names, where context is absent.</p>
+            </div>
+            <div class="col-12 graph-case graph-case3 mb-3"></div>
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container">
+                <p>Together, transliteration and tone loss compress <span class="count-namechara fw-bold">2,936</span> distinct characters into <span class="count-namepinyin fw-bold">375</span> Pinyin syllables.</p>
+            </div>
+        </div>
+        <div class="col-12 d-flex flex-column align-items-center">
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container">
+                <h2 class="fs-3 mt-3 mt-sm-5 mb-3 fw-bold">Challenges in <br>Identification</h2>
+                <p>This Pinyin romanization system can lead to name ambiguity, making it challenging to identify individuals based solely on Pinyin.</p>
+                <p>Given the varying popularity of characters in given names, some Pinyin syllables are more common than others. For example, "<span class="fw-bold">yu</span>" is the most frequent, with over 47 per 1,000 people having it in their given names, while fewer than 1 per million have "<span class="fw-bold">za</span>."</p>
+            </div>
+            <div class="col-12 graph-case graph-case4 mb-5"></div>
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container">
+                <p>The distribution of surnames is highly uneven, with <span class="fw-bold">the top five</span> accounting for <span id="topFivePer" class="fw-bold">32%</span> of the population, while many characters are not used as surnames at all. </p>
+            </div>
+            <div class="col-12 d-flex justify-content-center mt-3">
+                <div id="graph-pie" class="col-12"></div>
+            </div>
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container mt-3">
+                <p class="fs-7 text-muted text-center">Click any character above to switch example</p>
+                <p class="pie-hint"></p>
+            </div>
+            <div class="col-12 graph-case graph-case5 my-3"></div>
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container mb-3">
+                <p class="fs-7 text-muted text-center">Surname characters are highlighted in color, while those used less than 50 per million are in a lighter color.</p>
+            </div>
+            
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container d-flex align-items-center flex-column">
+                <p>This makes identifying surname characters from Pinyin easier, but it offers little help in distinguishing individuals, making given names essential for identification. Unfortunately, due to tone-omission and transliteration, even people with different given names may end up sharing the same Pinyin name.</p>
+                <a class="btn btn-light fw-bold px-5 mt-3 blinking fs-7" href="./explorer.html" role="button">Go to explorer</a>
+            </div>
+            <div class="col-12 graph-case graph-case6 my-3"></div>
+        </div>
+    </div>
+    <footer class="position-relative col-12 py-5 d-flex align-items-center justify-content-center mt-5">
+        <div class="col-11 col-md-10 col-xl-8 d-flex flex-wrap align-items-center align-items-md-start">
+            <div class="col-12 col-md-4 d-flex flex-column flex-lg-row order-2 order-sm-1 mt-sm-0 mt-4 fs-7">
+                <a href="https://www.csh.ac.at" class="logo mb-3 me-3" target="_blank">
+                    <img class="logo" src="./static/imgs/csh-black.svg" alt="csh_logo">
+                </a>
+            </div>
+            <div class="col-12 col-md-4 fs-7 order-1 order-sm-2">
+                <h5 class="fw-bold mb-1 fs-6">Research & Visualization</h5>
+                <p class="">Liuhuaying Yang (杨柳桦樱)</p>
+            </div>
+            <div class="col-12 col-md-4 order-1 order-sm-2 fs-7">
+                <h5 class="fw-bold mb-1 fs-6">More Visualizations</h5>
+                <a href="https://vis.csh.ac.at" class="fw-bold" target="_blank">CSH Visuals</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Libraries -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+    <script type="text/javascript" src="./lib/js/d3.v5.js"></script>
+    <script type="text/javascript" src="./lib/js/jquery/v3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/js/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script type="text/javascript" src="./lib/bootstrap/bootstrap-5.0/js/bootstrap.min.js"></script>
+    <!-- data -->
+    <script type="text/javascript" src="./components/dataParse.js?v1"></script>
+    <!-- Components -->
+    <script type="text/javascript" src="./components/util.js?v1"></script>
+    <script type="text/javascript" src="./components/treeMap.js?v3"></script>
+    <script type="text/javascript" src="./components/pieChart.js"></script>
+    <script type="text/javascript" src="./components/tooltip.js"></script>
+    <script type="text/javascript" src="./components/popup.js"></script>
+    <script type="text/javascript" src="./components/packRect.js"></script>
+    <script type="text/javascript" src="./components/Search.js"></script>
+    <script type="text/javascript" src="./components/Launch.js?v2"></script>
+</body>
+
+</html>

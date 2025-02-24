@@ -1,0 +1,168 @@
+/*tooltip */
+#tooltip {
+    z-index: 80;
+    transition: all 0.2s;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    top: 0px;
+    right: -120vw;
+    width: 200px;
+    height: fit-content;
+}
+
+#tooltipContent p {
+    margin: 0;
+}
+
+/*popup*/
+#popup {
+    background: #ffffff;
+    /*position: absolute;*/
+    top: -50vh;
+    z-index: 90;
+    transition: all 0.5s;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    width: 420px;
+    max-width: 100%;
+    padding-right: 3px;
+    max-width: 95vw;
+    opacity: 0;
+    pointer-events: none;
+    margin: 0 auto;
+}
+#popup .icon{
+    width: 1.5em;
+    height: 1.5em;
+    background-position: center;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+}
+#popup.open {
+    top: 2.5em;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#popup.showdetail {
+    background: #fff;
+}
+
+#popClose,
+#popReturn {
+    position: absolute;
+    top: 0.5em;
+    right: 0.8rem;
+    background: #fff;
+    /*border: 1px solid #51596f;*/
+    border: none;
+    cursor: pointer;
+    border-radius: 100%;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+    transition: all 0.2s;
+    z-index: 1;
+}
+
+#popReturn {
+    display: none;
+}
+
+#popup.showdetail #popReturn {
+    display: flex;
+}
+
+#popup.showdetail #popClose {
+    display: none;
+}
+
+#popClose:hover,
+#popReturn:hover {
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+}
+
+#popContent {
+    width: 100%;
+    z-index: 0;
+    /*height: calc(100vh - 40px);*/
+    height: fit-content;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#popContent::-webkit-scrollbar {
+    width: 4px;
+}
+
+#popContent::-webkit-scrollbar-track {
+    background: rgb(158, 232, 255, 0);
+    -webkit-box-shadow: inset 0 0 6px rgb(158, 232, 255, 0);
+}
+
+#popContent::-webkit-scrollbar-thumb {
+    background: #eee;
+    /*-webkit-box-shadow: inset 0 0 6px rgb(255, 255, 255, 0.6);*/
+}
+
+#popContent::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(255, 255, 255, 0.4);
+}
+#popContent p{
+    margin: 0.2em 0;
+}
+#popContent .head{
+    background: #fff;
+}
+#popContent .badge{
+    background: #f0f2f4;
+}
+.rightArrow{
+    height: 1em;
+    width: 2.5em;
+    background:#c0c2ce;
+    clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    flex-shrink: 0;
+}
+/* popup*/
+/*modal*/
+.modal-backdrop {
+  background-color: rgba(255, 255, 255, 0.2); 
+}
+.modal-content {
+    /*background: none !important;*/
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
+}
+.modal-header {
+    border-radius: 0 !important;
+}
+.modal-content .logo {
+    height: 2.8em;
+    width: auto;
+}
+.modal-content .logo-icon{
+    height: 1.2em;
+    width: auto;
+}
+.menu-icon{
+    height: 1.2em;
+    width: 1.2em;
+}
+#btn-start{
+    border-radius: 0;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+#btn-start:hover{
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+
+}
+.modal-dialog-scrollable .modal-content{
+    max-height: 80%;
+}
+/*modal*/

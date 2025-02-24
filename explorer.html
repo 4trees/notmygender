@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html class="no-js">
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta charset="utf-8">
+    <!-- GA -->
+    <!-- <script src="https://vis.csh.ac.at/analytics/ga4.js"></script> -->
+    <!-- Page title: change the content accordingly -->
+    <title>Explore Not My Gender</title>
+    <!-- Meta and image preview: change the content accordingly-->
+    <!-- <meta name="description" content="Explore the complexities of Chinese names and their Hanyu Pinyin transliteration, which can create ambiguity, even for native speakers."/> -->
+    <meta name="keywords" content="CSH, " />
+    <!-- <link rel="image_src" href="https://vis.csh.ac.at/notmyname/static/share-image.png" /> -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Not My Gender" />
+    <meta property="og:title" content="Not My Name" />
+    <!-- <meta property="og:url" content="https://vis.csh.ac.at/notmyname/" /> -->
+    <!-- <meta property="og:description" content="Explore the complexities of Chinese names and their Hanyu Pinyin transliteration, which can create ambiguity, even for native speakers." /> -->
+    <!-- <meta property="og:image" content="https://vis.csh.ac.at/notmyname/static/share-image.png" /> -->
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@csh" />
+    <meta name="twitter:title" content="Not My Gender" />
+    <!-- <meta name="twitter:description" content="Explore the complexities of Chinese names and their Hanyu Pinyin transliteration, which can create ambiguity, even for native speakers." /> -->
+    <!-- <meta name="twitter:url" content="https://vis.csh.ac.at/notmyname/" /> -->
+    <!-- <meta name="twitter:image" content="https://vis.csh.ac.at/notmyname/static/share-image.png" /> -->
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/yde2hyv.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/bootstrap-5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/icomoon/css/icomoon.css" />
+    <link rel="stylesheet" href="./styles/charts.css" />
+    <link rel="stylesheet" href="./styles/popup.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/search.css" />
+    <script src="https://vis.csh.ac.at/favicon/favicon.js"></script>
+</head>
+
+<body>
+    <nav class="g-0 d-flex flex-sm-column align-items-center justify-content-between fw-bold py-2">
+        <div class="d-flex align-items-center">
+            <a class="nav-link p-0 py-2" href="./">NotMyGender</a>
+        </div>
+        <button type="button" class="btn btn-sm btn-light d-flex align-items-center justify-content-center d-none d-sm-flex" data-bs-toggle="modal" data-bs-target="#legend-modal"><i class="icon-question"></i></button>
+        <div class="d-flex align-items-center flex-sm-column">
+            <a class="nav-link p-2 text-muted" href="./explorer.html">Explorer</a>
+            <a class="nav-link p-0 py-2" href="./about.html">About</a>
+        </div>
+    </nav>
+    <div class="container-fluid position-relative g-0 col-12 d-flex align-items-center flex-column">
+        <div id="headerbar" class="d-flex align-items-center position-absolute">
+            <!-- <div id="searchbar-f" class="search-container me-2 ps-2 py-2 py-sm-0"></div> -->
+            <div id="searchbar-g" class="search-container me-2 pps-2 y-2 py-sm-0"></div>
+            <button type="button" id="btn-randomname" class="btn btn-sm btn-light lh-1 py-2 py-sm-1 px-3 d-flex align-items-center justify-content-center"><i class="icon-random"></i></button>
+        </div>
+        <div id="popup" class="position-absolute">
+            <button id="popClose" class="icon-close"></button>
+            <div id="popContent" class="position-relative d-flex flex-column"></div>
+        </div>
+        <div id="tooltip" class="position-absolute">
+            <div id="tooltipContent" class="position-relative d-flex flex-column"></div>
+        </div>
+        <div id="graph-explore" class="graph col-12"></div>
+        <button type="button" class="btn btn-sm btn-light btn-legend d-flex align-items-center justify-content-center d-sm-none position-absolute m-0 py-2 px-4" data-bs-toggle="modal" data-bs-target="#legend-modal"><i class="icon-question"></i></button>
+    </div>
+    <div class="modal fade" id="legend-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="legend-modal" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body bg-white d-flex flex-column fs-7">
+                    <img class="col-12" src="./static/imgs/legend.svg" alt="legend">
+                    <p class="mb-0">In the surname character tree, surnames are highlighted in color; those used less than 50 per million appear in lighter shades.</p>
+                </div>
+                <div class="modal-footer bg-white d-flex align-items-center justify-content-center mt-1 p-0">
+                    <button type="button" class="btn btn-sm btn-light lh-1 py-2 px-3 d-flex align-items-center justify-content-center col-12 m-0" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="icon-close"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade show" id="navi-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="navi-modal" aria-hidden="true">
+        <div class="modal-dialog modal-sm modal-dialog-scrollable modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body bg-white d-flex flex-column fs-7">
+                    <p class="text-center fw-bold">Scroll to explore more trees</p>
+                    <img class="img-hint" src="./static/imgs/hand-hint.svg" alt="hint">
+                    <p class="mt-3">Use <i class="icon-search2"></i> search or <i class="icon-random"></i> shuffle at the top to discover a name. Click on the character to hear its pronunciation.</p>
+                    <p class="m-0 d-flex">Check <button type="button" class="mx-2 btn btn-sm btn-light d-flex align-items-center justify-content-center d-none d-sm-flex" data-bs-toggle="modal" data-bs-target="#legend-modal"><i class="icon-question"></i></button> for details.</p>
+                </div>
+                <div class="modal-footer bg-white d-flex align-items-center justify-content-center mt-1 p-0">
+                    <button type="button" class="btn btn-sm btn-light lh-1 py-2 px-3 d-flex align-items-center justify-content-center col-12 m-0" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="icon-close"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Libraries -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+    <script type="text/javascript" src="./lib/js/d3.v5.js"></script>
+    <script type="text/javascript" src="./lib/js/jquery/v3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/js/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script type="text/javascript" src="./lib/bootstrap/bootstrap-5.0/js/bootstrap.min.js"></script>
+    <!-- data -->
+    <script type="text/javascript" src="./components/dataParse.js?v1"></script>
+    <!-- Components -->
+    <script type="text/javascript" src="./components/util.js?v1"></script>
+    <!-- <script type="text/javascript" src="./components/dice.js"></script> -->
+    <script type="text/javascript" src="./components/treeMap.js?v1"></script>
+    <!-- <script type="text/javascript" src="./components/chapterData.js"></script> -->
+    <!-- <script type="text/javascript" src="./components/charaChart.js"></script> -->
+    <script type="text/javascript" src="./components/tooltip.js"></script>
+    <script type="text/javascript" src="./components/popup.js"></script>
+    <script type="text/javascript" src="./components/packRect.js"></script>
+    <!-- <script type="text/javascript" src="./components/packFixedRect.js"></script> -->
+    <script type="text/javascript" src="./components/Search.js"></script>
+    <!-- <script type="text/javascript" src="./components/profile.js"></script> -->
+    <script type="text/javascript" src="./components/Launch_explore.js"></script>
+</body>
+
+</html>

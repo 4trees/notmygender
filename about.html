@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html class="no-js">
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+    <meta charset="utf-8">
+    <!-- GA -->
+    <!-- <script src="https://vis.csh.ac.at/analytics/ga4.js"></script> -->
+    <!-- Page title: change the content accordingly -->
+    <title>About Not My Gender</title>
+    <!-- Meta and image preview: change the content accordingly-->
+    <!-- <meta name="description" content="Explore the complexities of Chinese names and their Hanyu Pinyin transliteration, which can create ambiguity, even for native speakers."/> -->
+    <meta name="keywords" content="CSH, " />
+    <!-- <link rel="image_src" href="https://vis.csh.ac.at/notmyname/static/share-image.png" /> -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Not My Gender" />
+    <meta property="og:title" content="Not My Gender" />
+    <!-- <meta property="og:url" content="https://vis.csh.ac.at/notmyname/" /> -->
+    <!-- <meta property="og:description" content="Explore the complexities of Chinese names and their Hanyu Pinyin transliteration, which can create ambiguity, even for native speakers." /> -->
+    <!-- <meta property="og:image" content="https://vis.csh.ac.at/notmyname/static/share-image.png" /> -->
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@csh" />
+    <meta name="twitter:title" content="Not My Gender" />
+    <!-- <meta name="twitter:description" content="Explore the complexities of Chinese names and their Hanyu Pinyin transliteration, which can create ambiguity, even for native speakers." /> -->
+    <!-- <meta name="twitter:url" content="https://vis.csh.ac.at/notmyname/" /> -->
+    <!-- <meta name="twitter:image" content="https://vis.csh.ac.at/notmyname/static/share-image.png" /> -->
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.typekit.net/yde2hyv.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100;200;300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./lib/bootstrap/bootstrap-5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/icomoon/css/icomoon.css" />
+    <link rel="stylesheet" href="./styles/charts.css" />
+    <link rel="stylesheet" href="./styles/popup.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link rel="stylesheet" href="./styles/search.css" />
+    <script src="https://vis.csh.ac.at/favicon/favicon.js"></script>
+</head>
+
+<body>
+    <nav class="g-0 d-flex flex-sm-column align-items-center justify-content-between fw-bold py-2">
+        <div class="d-flex align-items-center">
+            <a class="nav-link p-0 py-2" href="./">NotMyGender</a>
+        </div>
+        <div class="d-flex align-items-center flex-sm-column">
+            <a class="nav-link p-2" href="./explorer.html">Explorer</a>
+            <a class="nav-link p-0 py-2 disabled" href="./about.html" aria-disabled="true">About</a>
+        </div>
+    </nav>
+    <div class="container-fluid position-relative g-0 col-12 d-flex align-items-center flex-column">
+        <div class="cover-about d-flex flex-column align-items-start justify-content-start position-relative">
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container p-4">
+                <h1 class="d-flex align-items-center flex-column">
+                    <span class="fs-5 fw-bolder p-0 m-0 col-12">About</span>
+                    <span class="fs-1 fw-bolder mt-0 p-0 col-12">Not My Gender</span>
+                </h1>
+            </div>
+            <div id="graph-cover-about" class="graph col-12 position-absolute top-0"></div>
+        </div>
+    </div>
+    <div class="container-fluid position-relative g-0 col-12 d-flex align-items-center flex-column">
+        <div class="col-12 d-flex flex-column align-items-center">
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container">
+                <h2 class="fs-3 mt-3 mb-3 fw-bold">About the Project</h2>
+                <p>This project explores the complexity of Chinese names and the challenges of using Pinyin romanization, focusing on how it impacts the distinction between surnames and given names. While Pinyin simplifies Chinese characters for global audiences, it can create ambiguity when different characters share the same pronunciation. Our aim is to clarify name identification, especially in official contexts, and deepen understanding of Chinese culture, language, and naming conventions.</p>
+                <p>We use <span class="fst-italic">Hanyu Pinyin</span>, the standard romanization for Mandarin since 1958, recognized internationally in 1982 and by Taiwan in 2009. However, many prominent Chinese figures—especially those known internationally before Pinyin’s adoption—retain names in older systems like <span class="fst-italic">Wade-Giles</span>. For example, <span class="fst-italic">Chen-Ning Yang</span> (杨振宁) follows Wade-Giles conventions, which differ from the Pinyin form <span class="fst-italic">Yang Zhenning</span>.</p>
+                <p>What's more, we are conducting further research on identifying Chinese names. Feel free to reach out to follow our progress or collaborate by contacting Liuhuaying at <a href="mailto:yang@csh.ac.at">yang@csh.ac.at</a>.</p>
+            </div>
+            <div class="col-10 col-md-7 col-lg-5 col-xxl-5 text-container fs-7 border-top my-3 my-md-4 py-3 py-md-4">
+                <h3 class="fs-5 mb-3 fw-bold">Methods</h3>
+                <p>This project focuses on analyzing commonly used Chinese characters in names. Here are the main methods and considerations:</p>
+                <p><span class="fw-bold">Character Selection</span>: Starting with 8,105 General Standard Chinese Characters from <a href="http://hanzidb.org/character-list/general-standard" target="_blank">HanziDB</a>, we identified their Pinyin pronunciations from <a href="https://qxk.bnu.edu.cn/" target="_blank">Hanzi Quanxi</a>, excluding neutral tones and characters that only have a neutral tone, as they generally use one of four standard tones in names.</p>
+                <p><span class="fw-bold">Name Usage Analysis</span>: Using data from the <a href="https://github.com/psychbruce/ChineseNames" target="_blank">Chinese Name Database 1930-2008</a>, we analyzed characters used in given names and surnames, selecting those with a Name-Character Uniqueness (NU) greater than 6, resulting in 2,936 characters.</p>
+                <p><span class="fw-bold">Exclusion of Complex Names</span>: We excluded compound surnames (fixed combinations of characters) and given names longer than three characters. For given names, we only display three characters when they cannot be broken down into one or two characters. Additionally, cases where individuals adopt both their maiden and married surnames are not considered, focusing solely on the most common naming conventions.</p>
+                <p><span class="fw-bold">Handling Multiple Pronunciations</span>: For characters with multiple pronunciations, we prioritize the pronunciation typically used in given names or surnames. However, we retain other pronunciations as there are no strict rules preventing alternate pronunciations from being used in names.</p>
+                <p>Audio pronunciations are sourced from Chinese Pronunciation Wiki (&copy;2015-2022 AllSet Learning).</p>
+            </div>
+        </div>
+    </div>
+    <footer class="position-relative col-12 py-5 d-flex align-items-center justify-content-center mt-5">
+        <div class="col-11 col-md-10 col-xl-8 d-flex flex-wrap align-items-center align-items-md-start">
+            <div class="col-12 col-md-4 d-flex flex-column flex-lg-row order-2 order-sm-1 mt-sm-0 mt-4 fs-7">
+                <a href="https://www.csh.ac.at" class="logo mb-3 me-3" target="_blank">
+                    <img class="logo" src="./static/imgs/csh-black.svg" alt="csh_logo">
+                </a>
+            </div>
+            <div class="col-12 col-md-4 fs-7 order-1 order-sm-2">
+                <h5 class="fw-bold mb-1 fs-6">Research & Visualization</h5>
+                <p class="">Liuhuaying Yang (杨柳桦樱)</p>
+            </div>
+            <div class="col-12 col-md-4 order-1 order-sm-2 fs-7">
+                <h5 class="fw-bold mb-1 fs-6">More Visualizations</h5>
+                <a href="https://vis.csh.ac.at" class="fw-bold" target="_blank">CSH Visuals</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Libraries -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.1.0/chroma.min.js"></script>
+    <script type="text/javascript" src="./lib/js/d3.v5.js"></script>
+    <script type="text/javascript" src="./lib/js/jquery/v3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./lib/js/popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script type="text/javascript" src="./lib/bootstrap/bootstrap-5.0/js/bootstrap.min.js"></script>
+    <!-- data -->
+    <script type="text/javascript" src="./components/dataParse.js?v1"></script>
+    <!-- Components -->
+    <script type="text/javascript" src="./components/util.js?v1"></script>
+    <!-- <script type="text/javascript" src="./components/dice.js"></script> -->
+    <script type="text/javascript" src="./components/treeMap.js?v1"></script>
+    <script type="text/javascript" src="./components/packRect.js"></script>
+    <script type="text/javascript" src="./components/Launch_about.js"></script>
+</body>
+
+</html>
